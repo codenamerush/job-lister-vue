@@ -1,20 +1,18 @@
 <script>
-  import { ref } from 'vue';
-  
   export default {
-    setup() {
-      const name = ref('John Doe');
-      const status = ref('inactive');
-      const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
-      const changeStatus = () => {
-        status.value = status.value === 'active' ? 'inactive' : 'active';
-      }
+    name: 'App',
+    data() {
       return {
-        name,
-        status,
-        tasks,
-        changeStatus
+        name: 'John Doe',
+        status: 'inactive',
+        tasks: ['Task 1', 'Task 2', 'Task 3'],
+        link: 'https://www.google.com',
       }
+    },
+    methods: {
+      changeStatus() {
+        this.status = this.status === 'active' ? 'inactive' : 'active';
+      },
     }
   }
 </script>
@@ -28,6 +26,8 @@
   <ul>
     <li v-for="task in tasks" :key="task">{{ task }}</li>
   </ul>
+
+  <a :href="link">Click for Google</a>
   <br/><br/>
   <button @click="changeStatus"> Change Status </button>
 </template>
