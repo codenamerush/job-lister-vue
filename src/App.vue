@@ -1,22 +1,13 @@
-<script>
+<script setup>
   import { ref } from 'vue';
   
-  export default {
-    setup() {
-      const name = ref('John Doe');
-      const status = ref('inactive');
-      const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
-      const changeStatus = () => {
-        status.value = status.value === 'active' ? 'inactive' : 'active';
-      }
-      return {
-        name,
-        status,
-        tasks,
-        changeStatus
-      }
-    }
+  const name = ref('John Doe');
+  const status = ref('inactive');
+  const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
+  const changeStatus = () => {
+    status.value = status.value === 'active' ? 'inactive' : 'active';
   }
+  
 </script>
 
 <template>
